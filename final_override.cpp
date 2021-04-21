@@ -53,11 +53,30 @@ struct Object {
 //-----------------------------------------
 struct Base : public Object {
     void fun() final;               //声明final不可写
+    virtual void Turing() = 0;
+    virtual void Dijkstra() = 0;
+    virtual void VNeumann(int g) = 0;
+    virtual void DKnuth() const;
+    void Print();
+};
+
+struct DerivedMid : public Base {
+    //void VNeumann(double g);
+    //接口被隔离, 曾多想一个版本的VNeumann函数
+};
+
+struct DerivedTop : public DerivedMid {
+    void Turing() override;             //可以通过编译
+    //void Dijkstra() override;           //拼写错误, 无法通过编译
+    //void VNeumann(double g) override;   //参数不一样, 无法通过编译
+    //void DKnuth()  override;            //常量性不同, 无法通过编译
+    void DKnuth()  const override;      //正确函数, 可以通过编译
+    //void Print() override;              //非虚函数重载, 无法通过编译
 };
 
 struct Derived : public Base {
-    void fun();                     //无法通过编译
-}
+    //void fun();                         //无法通过编译
+};
 
 
 int main() {
