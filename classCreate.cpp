@@ -15,6 +15,7 @@
 using namespace std;
 
 #if 0
+//一个构造函数的派生
 struct A {
     A (int i) { }
 };
@@ -25,6 +26,7 @@ struct B : public A {
 };
 #endif
 
+//多个构造函数的派生
 struct A {
     A (int i) { 
 
@@ -58,4 +60,5 @@ struct B {
 
     }
 };
+
 
