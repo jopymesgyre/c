@@ -22,7 +22,7 @@ public:
     }
 
     //拷贝构造函数将在堆中分配内存, 并用 *h.d初始化
-    HasPtrMem(const HasPtrMem & h) : d(new int(*h.d)) {
+    HasPtrMem(const HasPtrMem& h) : d(new int(*h.d)) {
 
     }
 
