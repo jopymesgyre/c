@@ -23,9 +23,7 @@ struct RGBA {
     uint8 a;
 
     RGBA(uint8 R, uint8 G, uint8 B, uint8 A = 0) :
-        r(R), g(G), b(B), a(A) {
-
-        }
+        r(R), g(G), b(B), a(A) { }
 };
 
 RGBA operator "" _C(const char *col, size_t n) {
@@ -67,4 +65,15 @@ int main() {
     return 0;
 }
 
+//后缀声明作用于数值
+#if 0
+struct Watt { unsigned int v; };
 
+Watt operator "" _w(unsigned long long v) {
+    return {(unsigned int v};
+}
+
+int main() {
+    Watt capacity = 1024_w;
+}
+#endif
