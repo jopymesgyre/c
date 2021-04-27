@@ -16,6 +16,7 @@ public:
     double operator* (float v) {
         return (double)val * v;
     }
+
     const float val = 3.14592653;
 };
 
