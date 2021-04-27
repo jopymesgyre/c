@@ -15,8 +15,8 @@
 using namespace std;
 
 int main () {
-    vector<int> vec;
-    typedef decltype(vec.begin()) vectype;
+    vector<int> vec;            
+    typedef decltype(vec.begin()) vectype;          //定义了vector的iterator的类型
 
     for (vectype i = vec.begin(); i < vec.end(); ++i) {
         //do something
@@ -28,8 +28,7 @@ int main () {
     return 0;
 }
 
-//一些有趣的用法
-
+//一些有趣的用法: 定义关键字
 using size_t =  decltype(sizeof(0));
 using ptrdiff_t = decltype((int*)0 = (int*)0);
 using nullptr_t = decltype(nullptr);
